@@ -161,6 +161,31 @@ public class Practice {
   }
    Set<Vertex<T>> visited1 = new HashSet<>();
    Set<Vertex<T>> visited2 = new HashSet<>();
+       return canReach(v1, v2, visited1)
+        && canReach(v2, v1, visited2);
+}
+  private static <T> boolean canReach(
+      Vertex<T> current,
+      Vertex<T> target,
+      Set<Vertex<T>> visited
+  ) {
+      if (current == target) {
+          return true;
+      }
+
+      if (current == null || visited.contains(current)) {
+          return false;
+      }
+
+      visited.add(current);
+
+      for (Vertex<T> neighbor : current.neighbors) {
+          if (canReach(neighbor, target, visited)) {
+              return true;
+          }
+      }
+
+      return false;
   }
 
   /**
