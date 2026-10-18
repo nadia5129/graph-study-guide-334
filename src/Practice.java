@@ -204,6 +204,10 @@ public class Practice {
      if (starting <= 0 || ending <= 0) {
         return false;
     }
+       if (!graph.containsKey(starting) ||
+        !graph.containsKey(ending)) {
+        return false;
+    }
   }
 
   /**
