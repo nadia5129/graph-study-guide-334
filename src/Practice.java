@@ -201,7 +201,9 @@ public class Practice {
    * @return whether there exists a valid positive path from starting to ending
    */
   public static boolean positivePathExists(Map<Integer, Set<Integer>> graph, int starting, int ending) {
-    return false;
+     if (starting <= 0 || ending <= 0) {
+        return false;
+    }
   }
 
   /**
